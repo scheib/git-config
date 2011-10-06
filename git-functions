@@ -1,0 +1,25 @@
+#!/bin/bash
+
+meldgit () {
+  if [ "$1." == "." ]; then
+    echo specify a file to diff
+  else
+    git show HEAD:$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
+  fi
+}
+
+meldgitupstream () {
+  if [ "$1." == "." ]; then
+    echo specify a file to diff
+  else
+    git show $(git merge-base @{upstream} HEAD):$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
+  fi
+}
+
+meldgitorigin () {
+  if [ "$1." == "." ]; then
+    echo specify a file to diff
+  else
+    git show $(git merge-base origin/HEAD HEAD):$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
+  fi
+}
