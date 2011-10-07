@@ -1,25 +1,19 @@
 #!/bin/bash
 
-meldgit () {
-  if [ "$1." == "." ]; then
-    echo specify a file to diff
-  else
-    git show HEAD:$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
-  fi
-}
+# meldgit and varients open meld with an editable comparison of a file and 
+# it's version from HEAD, upstream, or origin.
+meldgit ()         { (meldgit-implementation HEAD $1) }
+meldgitupstream () { (meldgit-implementation $(git merge-base @{upstream} HEAD) $1) }
+meldgitorigin ()   { (meldgit-implementation $(git merge-base origin/HEAD HEAD) $1) }
 
-meldgitupstream () {
-  if [ "$1." == "." ]; then
-    echo specify a file to diff
+# Why not just git difftool? Because if the file has no edits yet it won't launch a diff.
+#   git difftool --tool meld HEAD:$(git ls-files --full-name -- $1) $1
+meldgit-implementation () {
+  base_branch=$1
+  file=$2
+  if [ "$file." == "." ]; then
+    echo specify a file
   else
-    git show $(git merge-base @{upstream} HEAD):$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
-  fi
-}
-
-meldgitorigin () {
-  if [ "$1." == "." ]; then
-    echo specify a file to diff
-  else
-    git show $(git merge-base origin/HEAD HEAD):$(git ls-files --full-name $1) > /tmp/left && meld /tmp/left $1
+    meld <(git show $base_branch:$(git ls-files --full-name -- $file)) $file
   fi
 }
