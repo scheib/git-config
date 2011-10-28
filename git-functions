@@ -5,6 +5,7 @@
 meldgit ()         { (meldgit-implementation HEAD $1) }
 meldgitupstream () { (meldgit-implementation $(git merge-base @{upstream} HEAD) $1) }
 meldgitorigin ()   { (meldgit-implementation $(git merge-base origin/HEAD HEAD) $1) }
+meldgitish ()      { (meldgit-implementation $1 $2) }
 
 # Why not just git difftool? Because if the file has no edits yet it won't launch a diff.
 #   git difftool --tool meld HEAD:$(git ls-files --full-name -- $1) $1
