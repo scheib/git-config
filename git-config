@@ -6,6 +6,7 @@
   c = checkout
   d = diff
   ds = diff --stat
+  dn = diff --name-only
   du = diff @{upstream}...
   do = diff origin/HEAD...
   dsu = diff --stat @{upstream}...
@@ -17,6 +18,7 @@
   l1 = log --oneline
   lu = log @{upstream}..
   lo = log origin/HEAD..
+  cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   mb = merge-base @{upstream} HEAD
 [merge]
