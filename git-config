@@ -21,6 +21,8 @@
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   mb = merge-base @{upstream} HEAD
+[branch]
+  autosetupmerge = always
 [merge]
   conflictstyle = diff3
   tool = p4merge
