@@ -6,6 +6,10 @@ meldgit ()         { (meldgit-implementation HEAD $1) }
 meldgitupstream () { (meldgit-implementation $(git merge-base @{upstream} HEAD) $1) }
 meldgitorigin ()   { (meldgit-implementation $(git merge-base origin/HEAD HEAD) $1) }
 meldgitish ()      { (meldgit-implementation $1 $2) }
+meldgitall ()         { (meldgitall-implementation HEAD) }
+meldgitupstreamall () { (meldgitall-implementation $(git merge-base @{upstream} HEAD)) }
+meldgitoriginall ()   { (meldgitall-implementation $(git merge-base origin/HEAD HEAD)) }
+meldgitishall ()      { (meldgitall-implementation $1) }
 
 # Why not just git difftool? Because if the file has no edits yet it won't launch a diff.
 #   git difftool --tool meld HEAD:$(git ls-files --full-name -- $1) $1
@@ -16,5 +20,21 @@ meldgit-implementation () {
     echo specify a file
   else
     meld <(git show $base_branch:$(git ls-files --full-name -- $file)) $file
+  fi
+}
+
+meldgitall-implementation () {
+  base_branch=$1
+  if [ "base_branch." == "." ]; then
+    echo specify a base_branch for git diff
+  else
+    gitnames=$(git diff --name-only $base_branch)
+    for file in $gitnames; do
+      read -p "meldgit $file [Yy]? " -n 1
+      if [[ $REPLY != "" ]]; then echo; fi
+      if [[ $REPLY =~ ^[Yy]$ ]] || [[ $REPLY == "" ]]; then
+        meldgit-implementation $base_branch $file
+      fi
+    done
   fi
 }
