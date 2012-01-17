@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# meldgit and varients open meld with an editable comparison of a file and 
+# meldgit and variants open meld with an editable comparison of a file and
 # it's version from HEAD, upstream, or origin.
 meldgit ()         { (meldgit-implementation HEAD $1) }
 meldgitupstream () { (meldgit-implementation $(git merge-base @{upstream} HEAD) $1) }
@@ -33,7 +33,7 @@ meldgitall-implementation () {
       read -p "meldgit $file [Yy]? " -n 1
       if [[ $REPLY != "" ]]; then echo; fi
       if [[ $REPLY =~ ^[Yy]$ ]] || [[ $REPLY == "" ]]; then
-        meldgit-implementation $base_branch $file
+        meldgit-implementation $base_branch $file &
       fi
     done
   fi
