@@ -24,11 +24,11 @@
   dsu = diff --stat @{upstream}...
   dus = diff --stat @{upstream}...
 
-  l = log
-  ls = log --stat
-  l1 = log --oneline
-  lu = log @{upstream}..
-  lo = log origin/HEAD..
+  l = log --relative-date
+  ls = log --relative-date --stat
+  l1 = log --relative-date --oneline
+  lu = log --relative-date @{upstream}..
+  lo = log --relative-date origin/HEAD..
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   mb = merge-base @{upstream} HEAD
