@@ -31,8 +31,11 @@
   l1 = log --relative-date --oneline
   lu = log --relative-date @{upstream}..
   lo = log --relative-date origin/HEAD..
+  lf = log --relative-date --first-parent
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
+  commitempty = commit --allow-empty
+  commitupload = commit --allow-empty -m "upload"
   mb = merge-base @{upstream} HEAD
 [branch]
   autosetupmerge = always
