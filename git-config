@@ -32,6 +32,15 @@
   lu = log --relative-date @{upstream}..
   lo = log --relative-date origin/HEAD..
   lf = log --relative-date --first-parent
+  lp = log --relative-date -p
+
+  conflicts = diff --name-only --diff-filter=U
+
+  # retires a branch by renaming it to zMONTH-DAY-name. Use: git bretire branchname
+  # this one allows autocomplete.
+  bretire = "!f(){ git branch -m $1 z$(date +%m-%d-)$1; };f"
+  #bretire_safer = "!f(){ [ "$1." != "." ] && git branch -m $1 z$(date +%m-%d-)$1 || echo "Usage: git bretire branchname"; };f"
+
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   commitempty = commit --allow-empty
