@@ -46,6 +46,8 @@
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   commitempty = commit --allow-empty
+  commitcomment = commit --allow-empty
+  commitchange = commit --allow-empty -am "ChangeLogs"
   commitupload = commit --allow-empty -m "upload"
   mb = merge-base @{upstream} HEAD
 [branch]
