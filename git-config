@@ -4,6 +4,9 @@
   s = status
   b = branch -vv
   c = checkout
+  cb = checkout -b
+  f = fetch
+  fo = fetch origin
 
   # diff variants
   d = diff
@@ -18,8 +21,8 @@
   don = diff --name-only origin/HEAD...
   dso = diff --stat origin/HEAD...
   dos = diff --stat origin/HEAD...
-  # diff variants with upstream
 
+  # diff variants with upstream
   du = diff @{upstream}...
   dnu = diff --name-only @{upstream}...
   dun = diff --name-only @{upstream}...
