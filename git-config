@@ -10,20 +10,30 @@
 
   # diff variants
   d = diff
+  dt = difftool
   dn = diff --name-only
   ds = diff --stat
 
-  # diff variants with origin
+  # diff variants with head
   dc = diff --cached
   dh = diff HEAD
-  do = diff origin/HEAD...
-  dno = diff --name-only origin/HEAD...
-  don = diff --name-only origin/HEAD...
-  dso = diff --stat origin/HEAD...
-  dos = diff --stat origin/HEAD...
+  dth = difftool HEAD
+  dnh = diff --name-only HEAD
+  dhn = diff --name-only HEAD
+  dsh = diff --stat HEAD
+  dhs = diff --stat HEAD
+
+  # diff variants with origin/master
+  do = diff origin/master...
+  dto = difftool origin/master...
+  dno = diff --name-only origin/master...
+  don = diff --name-only origin/master...
+  dso = diff --stat origin/master...
+  dos = diff --stat origin/master...
 
   # diff variants with upstream
   du = diff @{upstream}...
+  dtu = difftool @{upstream}...
   dnu = diff --name-only @{upstream}...
   dun = diff --name-only @{upstream}...
   dsu = diff --stat @{upstream}...
@@ -55,9 +65,17 @@
   mb = merge-base @{upstream} HEAD
 [branch]
   autosetupmerge = always
+[diff]
+  tool = meld
+[difftool]
+  prompt = false
 [merge]
   conflictstyle = diff3
-  tool = p4merge
+  tool = p4v
+[mergetool]
+  prompt = false
+[mergetool "p4v"]
+  cmd = p4v -merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 [rerere]
   enabled = 1
 [diff]
