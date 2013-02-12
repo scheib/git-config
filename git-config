@@ -48,8 +48,7 @@
   lp = log --relative-date -p
 
   conflicts = diff --name-only --diff-filter=U
-  set-upstream-master = "!f(){ git branch --set-upstream $(git rev-parse --abbrev-ref HEAD) origin/master; };f"
-  track-master = "!f(){ git branch --set-upstream $(git rev-parse --abbrev-ref HEAD) origin/master; };f"
+  set-upstream-master = branch --set-upstream-to=origin/master
 
   # retires a branch by renaming it to zMONTH-DAY-name. Use: git bretire branchname
   # this one allows autocomplete.
