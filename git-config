@@ -14,8 +14,20 @@
   dn = diff --name-only
   ds = diff --stat
 
-  # diff variants with head
+  # diff variants with cached index
   dc = diff --cached
+  dcn = diff --cached --name-only
+  dnc = diff --cached --name-only
+  dcs = diff --cached --stat
+  dsc = diff --cached --stat
+  dch = diff --cached
+  dhc = diff --cached
+  dco = diff --cached origin/master
+  doc = diff --cached origin/master
+  dcu = diff --cached @{upstream}
+  duc = diff --cached @{upstream}
+
+  # diff variants with head
   dh = diff HEAD
   dth = difftool HEAD
   dhn = diff --name-only HEAD
