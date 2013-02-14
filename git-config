@@ -18,27 +18,28 @@
   dc = diff --cached
   dh = diff HEAD
   dth = difftool HEAD
-  dnh = diff --name-only HEAD
   dhn = diff --name-only HEAD
-  dsh = diff --stat HEAD
+  dnh = diff --name-only HEAD
   dhs = diff --stat HEAD
+  dsh = diff --stat HEAD
 
   # diff variants with origin/master
   do = diff origin/master...
   dto = difftool origin/master...
-  dno = diff --name-only origin/master...
   don = diff --name-only origin/master...
-  dso = diff --stat origin/master...
+  dno = diff --name-only origin/master...
   dos = diff --stat origin/master...
+  dso = diff --stat origin/master...
 
   # diff variants with upstream
   du = diff @{upstream}...
   dtu = difftool @{upstream}...
-  dnu = diff --name-only @{upstream}...
   dun = diff --name-only @{upstream}...
-  dsu = diff --stat @{upstream}...
+  dnu = diff --name-only @{upstream}...
   dus = diff --stat @{upstream}...
+  dsu = diff --stat @{upstream}...
 
+  # log variants
   l = log --relative-date
   ls = log --relative-date --stat
   l1 = log --relative-date --oneline
@@ -47,21 +48,24 @@
   lf = log --relative-date --first-parent
   lp = log --relative-date -p
 
-  conflicts = diff --name-only --diff-filter=U
-  set-upstream-master = branch --set-upstream-to=origin/master
-
-  # retires a branch by renaming it to zMONTH-DAY-name. Use: git bretire branchname
-  # this one allows autocomplete.
-  bretire = "!f(){ git branch -m $1 z$(date +%m-%d-)$1; };f"
-  #bretire_safer = "!f(){ [ "$1." != "." ] && git branch -m $1 z$(date +%m-%d-)$1 || echo "Usage: git bretire branchname"; };f"
-
+  # commit
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   commitempty = commit --allow-empty
   commitcomment = commit -am "comment(s)"
   commitchange = commit --allow-empty -am "ChangeLogs"
   commitupload = commit --allow-empty -m "upload"
+
+  # retires a branch by renaming it to zMONTH-DAY-name. Use: git bretire branchname
+  # this one allows autocomplete.
+  bretire = "!f(){ git branch -m $1 z$(date +%m-%d-)$1; };f"
+  #bretire_safer = "!f(){ [ "$1." != "." ] && git branch -m $1 z$(date +%m-%d-)$1 || echo "Usage: git bretire branchname"; };f"
+
+  # misc
   mb = merge-base @{upstream} HEAD
+  conflicts = diff --name-only --diff-filter=U
+  set-upstream-master = branch --set-upstream-to=origin/master
+
 [branch]
   autosetupmerge = always
 [diff]
