@@ -8,6 +8,7 @@
 
   # checkout variants
   c = checkout
+  cm = checkout master
   co = checkout origin/master
   cu = checkout @{upstream}
   cb = checkout -b
