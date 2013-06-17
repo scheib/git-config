@@ -82,6 +82,7 @@
   mb = merge-base @{upstream} HEAD
   conflicts = diff --name-only --diff-filter=U
   set-upstream-master = branch --set-upstream-to=origin/master
+  set-upstream-lkgr = branch --set-upstream-to=origin/lkgr
 
 [branch]
   autosetupmerge = always
