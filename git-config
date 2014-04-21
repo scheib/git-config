@@ -15,7 +15,7 @@
 
   # diff variants
   d = diff
-  dt = difftool
+  dt = difftool --dir-diff
   dn = diff --name-only
   ds = diff --stat
 
