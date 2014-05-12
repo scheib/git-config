@@ -74,6 +74,7 @@
   lp = log --relative-date -p
 
   # commit
+  cam = commit -a -m
   cwip = commit -a -m "WIP"
   commitamend = commit --amend -C HEAD
   commitempty = commit --allow-empty
