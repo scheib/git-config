@@ -75,7 +75,7 @@
   lu = log --relative-date @{upstream}..
   lo = log --relative-date origin/HEAD..
   lf = log --relative-date --first-parent
-  lp = log --relative-date -p
+  lp = log --relative-date -p --cc
 
   # commit
   cam = commit -a -m
