@@ -98,6 +98,11 @@
   set-upstream-lkcr = branch --set-upstream-to=origin/lkcr
   set-upstream-lkgr = branch --set-upstream-to=origin/lkgr
 
+  # Chromium depot_tools specific
+  nd = nav-downstream
+  nu = nav-upstream
+  m = map-branches
+
 [branch]
   autosetupmerge = always
 [diff]
