@@ -103,6 +103,7 @@
 [merge]
   conflictstyle = diff3
   tool = p4v
+  stat = false  # Suppress status update after merges, as Chromium merges are huge.
 [mergetool]
   prompt = false
 [mergetool "p4v"]
