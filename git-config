@@ -83,8 +83,9 @@
   #bretire_safer = "!f(){ [ "$1." != "." ] && git branch -m $1 z$(date +%m-%d-)$1 || echo "Usage: git bretire branchname"; };f"
 
   # misc
-  mb = merge-base @{upstream} HEAD
   conflicts = diff --name-only --diff-filter=U
+  mb = merge-base @{upstream} HEAD
+  pullne = pull --no-edit # Do not open editor for a merge commit message.
   set-upstream-master = branch --set-upstream-to=origin/master
   set-upstream-lkcr = branch --set-upstream-to=origin/lkcr
   set-upstream-lkgr = branch --set-upstream-to=origin/lkgr
