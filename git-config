@@ -131,5 +131,9 @@
   changed = green
   untracked = cyan
 
+[user]
+  name = Vincent Scheib
+  email = scheib@users.noreply.github.com
+
 #### local only changes below:
 
