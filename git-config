@@ -134,6 +134,8 @@
 [user]
   name = Vincent Scheib
   email = scheib@users.noreply.github.com
+[alias]
+  lme = log --relative-date --author=scheib
 
 #### local only changes below:
 
