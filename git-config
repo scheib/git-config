@@ -130,6 +130,8 @@
   added = yellow
   changed = green
   untracked = cyan
+[pager]
+  branch = false  # No need to use 'less' or other pagers when listing branches.
 
 [user]
   name = Vincent Scheib
