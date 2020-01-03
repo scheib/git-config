@@ -113,23 +113,8 @@
   enabled = 1
 [diff]
   renames = copies
-[color]
-  ui = auto
-[color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
 [color "diff"]
-  commit = reverse yellow
-  meta = yellow
-  frag = magenta bold
-  func = cyan bold
-  old = red bold
-  new = green bold
-[color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+  func = italic
 [pager]
   branch = false  # No need to use 'less' or other pagers when listing branches.
 
