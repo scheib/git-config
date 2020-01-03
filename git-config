@@ -14,26 +14,26 @@
   cb = checkout -b
 
   # diff variants
-  d = diff
+  d = diff --color-words
   dt = difftool --dir-diff
   dn = diff --name-only
   ds = diff --stat
 
   # diff variants with cached index
-  dc = diff --cached
-  dcn = diff --cached --name-only
-  dnc = diff --cached --name-only
-  dcs = diff --cached --stat
-  dsc = diff --cached --stat
-  dch = diff --cached
-  dhc = diff --cached
-  dco = diff --cached origin/master
-  doc = diff --cached origin/master
-  dcu = diff --cached @{upstream}
-  duc = diff --cached @{upstream}
+  dc = diff --color-words --cached
+  dcn = diff --color-words --cached --name-only
+  dnc = diff --color-words --cached --name-only
+  dcs = diff --color-words --cached --stat
+  dsc = diff --color-words --cached --stat
+  dch = diff --color-words --cached
+  dhc = diff --color-words --cached
+  dco = diff --color-words --cached origin/master
+  doc = diff --color-words --cached origin/master
+  dcu = diff --color-words --cached @{upstream}
+  duc = diff --color-words --cached @{upstream}
 
   # diff variants with head
-  dh = diff HEAD
+  dh = diff --color-words HEAD
   dht = difftool --dir-diff HEAD
   dth = difftool --dir-diff HEAD
   dhn = diff --name-only HEAD
@@ -42,7 +42,7 @@
   dsh = diff --stat HEAD
 
   # diff variants with origin/master
-  do = diff origin/master...
+  do = diff --color-words origin/master...
   dot = difftool --dir-diff origin/master...
   dto = difftool --dir-diff origin/master...
   don = diff --name-only origin/master...
@@ -51,7 +51,7 @@
   dso = diff --stat origin/master...
 
   # diff variants with upstream
-  du = diff @{upstream}...
+  du = diff --color-words @{upstream}...
   dut = difftool --dir-diff @{upstream}...
   dtu = difftool --dir-diff @{upstream}...
   dun = diff --name-only @{upstream}...
@@ -66,7 +66,7 @@
   lu = log --relative-date @{upstream}..
   lo = log --relative-date origin/HEAD..
   lf = log --relative-date --first-parent
-  lp = log --relative-date -p --cc
+  lp = log --relative-date -p --cc --color-words
 
   # commit
   cam = commit -a -m
