@@ -109,6 +109,8 @@
   prompt = false
 [mergetool "p4v"]
   cmd = p4v -merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+[pull]
+  rebase = false  # Merge is default; specified to suppress option message.
 [rerere]
   enabled = 1
 [diff]
