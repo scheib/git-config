@@ -8,8 +8,8 @@
 
   # checkout variants
   c = checkout
-  cm = checkout master
-  co = checkout origin/master
+  cm = checkout main
+  co = checkout origin/main
   cu = checkout @{upstream}
   cb = checkout -b
 
@@ -27,8 +27,8 @@
   dsc = diff --color-words --cached --stat
   dch = diff --color-words --cached
   dhc = diff --color-words --cached
-  dco = diff --color-words --cached origin/master
-  doc = diff --color-words --cached origin/master
+  dco = diff --color-words --cached origin/main
+  doc = diff --color-words --cached origin/main
   dcu = diff --color-words --cached @{upstream}
   duc = diff --color-words --cached @{upstream}
 
@@ -41,14 +41,14 @@
   dhs = diff --stat HEAD
   dsh = diff --stat HEAD
 
-  # diff variants with origin/master
-  do = diff --color-words origin/master...
-  dot = difftool --dir-diff origin/master...
-  dto = difftool --dir-diff origin/master...
-  don = diff --name-only origin/master...
-  dno = diff --name-only origin/master...
-  dos = diff --stat origin/master...
-  dso = diff --stat origin/master...
+  # diff variants with origin/main
+  do = diff --color-words origin/main...
+  dot = difftool --dir-diff origin/main...
+  dto = difftool --dir-diff origin/main...
+  don = diff --name-only origin/main...
+  dno = diff --name-only origin/main...
+  dos = diff --stat origin/main...
+  dso = diff --stat origin/main...
 
   # diff variants with upstream
   du = diff --color-words @{upstream}...
@@ -86,7 +86,7 @@
   conflicts = diff --name-only --diff-filter=U
   mb = merge-base @{upstream} HEAD
   pullne = pull --no-edit # Do not open editor for a merge commit message.
-  set-upstream-master = branch --set-upstream-to=origin/master
+  set-upstream-main = branch --set-upstream-to=origin/main
   set-upstream-lkcr = branch --set-upstream-to=origin/lkcr
   set-upstream-lkgr = branch --set-upstream-to=origin/lkgr
 
