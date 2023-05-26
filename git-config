@@ -95,6 +95,9 @@
   nu = nav-upstream
   m = map-branches
 
+[core]
+  fsmonitor = true
+  untrackedCache = true
 [branch]
   autosetupmerge = always
 [diff]
